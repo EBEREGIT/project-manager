@@ -5,7 +5,7 @@ import SignedOutLinks from './signedOutLinks'
 
 const NavBar = () => {
     return (
-        <nav className="nav-wrapper grey darken-3">
+        <nav className="nav-wrapper transparent">
             <div className="container">
                 <Link to="/" className="brand-logo">
                     EberePlentyApp
