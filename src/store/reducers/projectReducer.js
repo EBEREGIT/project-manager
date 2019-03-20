@@ -21,6 +21,10 @@ const initialState = {
 
 // create projectReducer here
 const projectReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case 'CREATE-PROJECT':
+            console.log('Created Project', action.project);
+    }
     return(
         state
     )

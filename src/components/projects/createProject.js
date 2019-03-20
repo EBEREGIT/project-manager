@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'net';
+import { createProject } from '../../store/actions/projectActions';
 
 class CreateProject extends Component {
     state = {
@@ -16,7 +18,8 @@ class CreateProject extends Component {
     // onSubmit function
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state);
+        // console.log(this.state);
+        this.props.createProject(this.state)
     }
   render() {
     return (
@@ -46,4 +49,15 @@ class CreateProject extends Component {
   }
 }
 
-export default CreateProject;
+// map or convert dispatch to props
+const mapDispatchToProps = (dispatch) => {
+    return{
+        // this method takes in the individual project passed in from above
+        // and execute the createProject function from the projectActions
+        createProject: (project) => dispatch(createProject(project))
+    }
+}
+
+// connecting this component to the redux central store (a higher-order component)
+// null is representing mapStateToProps since it does not exist here
+export default connect(null, mapDispatchToProps)(CreateProject);
