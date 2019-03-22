@@ -3,13 +3,26 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import rootReducer from './store/reducers/rootReducer';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
+import { reduxFirestore, getFirestore } from 'redux-firestore';
+import { reactReduxFirebase, getFirebase } from 'react-redux-firebase';
+import fb-config from './config/fb-config';
 
 // create store here 
-const store = createStore(rootReducer, applyMiddleware(thunk));
+const store = createStore(rootReducer, 
+    // compose is used to combine multiple store enhancers function
+    compose(
+        // this provides extra arguements to be able to interact with the firebase firestore db
+        applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
+
+        // the firbase gets connected with the project here
+        reduxFirestore(fb-config),
+        reactReduxFirebase(fb-config)
+    )
+);
 
 ReactDOM.render(
     <Provider store={store}>
