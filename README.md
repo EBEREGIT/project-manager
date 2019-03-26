@@ -8,9 +8,9 @@ A react project created to manage sets of projects using react to manipulate the
 * Redux https://redux.js.org/
 
 ## Installation
-* clone this repository https://github.com/EBEREGIT/project-manager/
+* clone this repository https://github.com/EBEREGIT/project-manager
 * Navigate into the project directory
-* search for <code>fbConfig.js</code> and replace the code there with your own firebase configuration and setup your firebase according the project specification in <codecreateProject</code> component
+* search for <code>fbConfig.js</code> and replace the code there with your own firebase configuration and setup your firebase according the project specification in <code>createProject</code> component
 * run <code>npm start</code>
 
 ### `npm start`
