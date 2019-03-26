@@ -60,4 +60,4 @@ const mapDispatchToProps = (dispatch) => {
 
 // connecting this component to the redux central store (a higher-order component)
 // null is representing mapStateToProps since it does not exist here
-export default connect(null, mapDispatchToProps)(CreateProject);
+export default connect(null, mapDispatchToProps) (CreateProject);

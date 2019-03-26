@@ -32,4 +32,4 @@ const mapStateToProps = (state) => {
 }
 
 // connect the dashboard component to the store (a high-order component)
-export default connect(mapStateToProps,) (Dashboard);
+export default connect(mapStateToProps) (Dashboard);
